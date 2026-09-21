@@ -8,6 +8,7 @@ import os
 import streamlit as st
 import pandas as pd
 from dotenv import load_dotenv
+from langsmith import traceable
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -15,6 +16,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Function to preprocess and save the uploaded file
 
 
+@traceable(name="Uploading data")
 def preprocess_and_save(file):
     try:
         # Read the uploaded file into a DataFrame
@@ -105,6 +107,13 @@ if uploaded_file is not None:
         # Add info message about terminal output
         st.info("💡 Check your terminal for a clearer output of the agent's response")
 
+        @traceable(name="Data Analyst Query", run_type="chain")
+        def run_agent_query(query: str) -> str:
+            response = data_analyst_agent.run(query)
+            if hasattr(response, 'content'):
+                return response.content
+            return str(response)
+
         if st.button("Submit Query"):
             if user_query.strip() == "":
                 st.warning("Please enter a query.")
@@ -112,14 +121,10 @@ if uploaded_file is not None:
                 try:
                     # Show loading spinner while processing
                     with st.spinner('Processing your query...'):
-                        # Get the response from the agent
-                        response = data_analyst_agent.run(user_query)
-
-                        # Extract the content from the response object
-                        if hasattr(response, 'content'):
-                            response_content = response.content
-                        else:
-                            response_content = str(response)
+                        # Get the response from the agent (traced as a single
+                        # LangSmith run -- see note below on what this does
+                        # and doesn't capture)
+                        response_content = run_agent_query(user_query)
 
                     # Display the response in Streamlit
                     st.markdown(response_content)

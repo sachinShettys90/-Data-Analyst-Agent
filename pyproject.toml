@@ -7,7 +7,9 @@ authors = [
     { name = "Sachinshettys90", email = "sachinshettyss85@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "langsmith>=0.13.0",
+]
 
 [project.scripts]
 vscode-dataanalysisagent = "vscode_dataanalysisagent:main"
