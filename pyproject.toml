@@ -1,23 +1,17 @@
 [project]
 name = "vscode-dataanalysisagent"
 version = "0.1.0"
-description = "Add your description here"
+description = "Data Analyst Agent"
 readme = "README.md"
-authors = [
-    { name = "Sachinshettys90", email = "sachinshettyss85@gmail.com" }
-]
 requires-python = ">=3.12"
+
 dependencies = [
-    "ddgs>=9.16.0",
+    "agno==3.0.10",
+    "duckdb",
+    "pandas",
+    "openai",
+    "openpyxl",
+    "python-dotenv>=1.0",
     "langsmith>=0.13.0",
-    "lxml-html-clean>=0.4.5",
-    "newspaper4k>=0.9.6",
-    "yfinance>=1.7.0",
+    "streamlit>=1.38",
 ]
-
-[project.scripts]
-vscode-dataanalysisagent = "vscode_dataanalysisagent:main"
-
-[build-system]
-requires = ["uv_build>=0.12.9,<0.13.0"]
-build-backend = "uv_build"
