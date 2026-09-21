@@ -1,14 +1,21 @@
-from agno.agent import Agent
-from agno.models.openai import OpenAIChat
-from agno.tools.duckdb import DuckDbTools
-
-import tempfile
-import csv
-import os
+import agno
 import streamlit as st
-import pandas as pd
-from dotenv import load_dotenv
+
 from langsmith import traceable
+from dotenv import load_dotenv
+import pandas as pd
+import os
+import csv
+import tempfile
+from agno.tools.duckdb import DuckDbTools
+from agno.models.openai import OpenAIChat
+from agno.agent import Agent
+
+
+st.write("Agno version:", agno.__version__)
+st.write("Agno location:", agno.__file__)
+
+
 load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
