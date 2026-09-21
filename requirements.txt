@@ -1,7 +1,7 @@
 streamlit>=1.38
-agno
-pandas
+agno==3.0.10
 duckdb
+pandas
 openai
 python-dotenv>=1.0
 langsmith>=0.1

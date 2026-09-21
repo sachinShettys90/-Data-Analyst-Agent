@@ -1,7 +1,7 @@
-
-from agno.tools.duckdb import DuckDbTools
-from agno.models.openai import OpenAIChat
 from agno.agent import Agent
+from agno.models.openai import OpenAIChat
+from agno.tools.duckdb import DuckDbTools
+
 import tempfile
 import csv
 import os
