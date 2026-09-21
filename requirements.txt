@@ -1,5 +1,8 @@
+streamlit>=1.38
 agno
 pandas
 duckdb
 openai
-streamlit
+python-dotenv>=1.0
+langsmith>=0.1
+openpyxl
