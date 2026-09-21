@@ -1,5 +1,5 @@
-streamlit==1.41.1
-agno[openai]>=2.2.10
-duckdb>=1.4.1
+agno
 pandas
-numpy==1.26.4
+duckdb
+openai
+streamlit
