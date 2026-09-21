@@ -1,17 +1,30 @@
+
 [project]
 name = "vscode-dataanalysisagent"
 version = "0.1.0"
-description = "Data Analyst Agent"
+description = "AI Data Analyst and Research Agent"
 readme = "README.md"
 requires-python = ">=3.12"
 
 dependencies = [
+    # Core AI / Agent framework
     "agno==3.0.10",
-    "duckdb",
-    "pandas",
     "openai",
+
+    # Data Analyst Agent
+    "pandas",
+    "duckdb",
     "openpyxl",
+    "streamlit>=1.38",
+
+    # Research Agent
+    "ddgs",
+    "newspaper4k",
+    "lxml-html-clean",
+    "yfinance",
+
+    # Environment / Observability
     "python-dotenv>=1.0",
     "langsmith>=0.13.0",
-    "streamlit>=1.38",
 ]
+
