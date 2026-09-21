@@ -1,4 +1,4 @@
-from agno.tools.pandas import PandasTools
+
 from agno.tools.duckdb import DuckDbTools
 from agno.models.openai import OpenAIChat
 from agno.agent import Agent
@@ -92,7 +92,7 @@ if uploaded_file is not None:
         # Initialize the Agent with DuckDB and Pandas tools
         data_analyst_agent = Agent(
             model=OpenAIChat(id="gpt-4o", api_key=OPENAI_API_KEY),
-            tools=[duckdb_tools, PandasTools()],
+            tools=[duckdb_tools],
             system_message="You are an expert data analyst. Use the 'uploaded_data' table to answer user queries. Generate SQL queries using DuckDB tools to solve the user's query. Provide clear and concise answers with the results.",
             markdown=True,
         )
