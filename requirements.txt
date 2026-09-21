@@ -1,5 +1,5 @@
 streamlit>=1.38
-agno
+agno==3.0.10
 pandas
 duckdb
 openai
