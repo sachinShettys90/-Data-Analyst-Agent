@@ -7,6 +7,9 @@ This project contains two AI applications:
 1. 📊 **Data Analyst Agent**
 2. 🔍 **Research Agent**
 
+
+DOCKER TAGS : docker pull sachinshettyss85/dagent:latest
+
 ---
 
 ## 🚀 Live Demos
