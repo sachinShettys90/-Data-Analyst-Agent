@@ -10,21 +10,20 @@ dependencies = [
     # Core AI / Agent framework
     "agno==3.0.10",
     "openai",
-
     # Data Analyst Agent
     "pandas",
     "duckdb",
     "openpyxl",
     "streamlit>=1.38",
-
     # Research Agent
     "ddgs",
     "newspaper4k",
     "lxml-html-clean",
     "yfinance",
-
     # Environment / Observability
     "python-dotenv>=1.0",
     "langsmith>=0.13.0",
+    "langchain>=1.4.2",
+    "langchain-openai>=1.6.4",
 ]
 
